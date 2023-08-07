@@ -11,6 +11,15 @@ class FeedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: const Key('feedPage'),
+      appBar: AppBar(
+        title: Text(label ?? 'Feed'),
+        actions: [
+          IconButton(
+            key: const Key('addIcon'),
+            onPressed: () {}, icon: Icon(Icons.add)),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +29,7 @@ class FeedPage extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             ElevatedButton(
-              // onPressed: () => context.go('/feed/details'),
+              key: const Key('feed_details_button'),
               onPressed: () {
                 context.go(RouterPath.feedDetails);
               },
