@@ -16,8 +16,9 @@ class FeedPage extends StatelessWidget {
         title: Text(label ?? 'Feed'),
         actions: [
           IconButton(
-            key: const Key('addIcon'),
-            onPressed: () {}, icon: Icon(Icons.add)),
+              key: const Key('addIcon'),
+              onPressed: () {},
+              icon: Icon(Icons.add)),
         ],
       ),
       body: Center(
@@ -35,6 +36,12 @@ class FeedPage extends StatelessWidget {
               },
               child: const Text('Go to feed/details'),
             ),
+            ElevatedButton(
+                key: const Key('call_button'),// このキーを使ってテストを実行する
+                onPressed: () {
+                  print('call');
+                },
+                child: const Text('call'))
           ],
         ),
       ),
